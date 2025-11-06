@@ -1,379 +1,207 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ConsulTeam - Возврат средств от мошенников</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-
-        .gradient-bg { background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%); }
-        .gradient-orange { background: linear-gradient(135deg, #ff6b35 0%, #ff8500 50%, #ff4500 100%); }
-        .gradient-text { background: linear-gradient(135deg, #ff6b35, #ff8500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-        .animate-float { animation: float 6s ease-in-out infinite; }
-        .animate-pulse-slow { animation: pulse-slow 4s ease-in-out infinite; }
-        .animate-slide-up { animation: slideUp 0.8s ease-out forwards; opacity: 0; transform: translateY(30px); }
-        .animate-scale { animation: scale 0.6s ease-out forwards; opacity: 0; transform: scale(0.9); }
-
-        @keyframes float { 0%,100%{transform:translateY(0px);} 50%{transform:translateY(-20px);} }
-        @keyframes pulse-slow { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
-        @keyframes slideUp { to {opacity:1; transform:translateY(0);} }
-        @keyframes scale { to {opacity:1; transform:scale(1);} }
-
-        .card-hover { transition: all 0.3s ease; }
-        .card-hover:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(255,107,53,0.3); }
-
-        .btn-orange { background: linear-gradient(135deg, #ff6b35, #ff8500); transition: all 0.3s ease; }
-        .btn-orange:hover { background: linear-gradient(135deg, #ff8500, #ff4500); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(255,107,53,0.4); }
-
-        .section-padding { padding: 80px 0; }
-
-        .timeline-item { position: relative; padding-left: 60px; }
-        .timeline-item::before { content: ''; position: absolute; left: 0; top: 0; width: 40px; height: 40px; background: linear-gradient(135deg, #ff6b35, #ff8500); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; }
-        .step-1::before { content: '1'; }
-        .step-2::before { content: '2'; }
-        .step-3::before { content: '3'; }
-        .step-4::before { content: '4'; }
-        .step-5::before { content: '5'; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CryptoConsul — Возврат криптовалюты и защита от мошенников</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
+
 <body class="bg-black text-white overflow-x-hidden">
 
-<!-- ========================= HEADER ========================= -->
+<!-- HEADER -->
 <header class="relative overflow-hidden h-screen">
-    <!-- Параллакс фон -->
-    <div class="absolute inset-0">
-        <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black opacity-80"></div>
-        <img src="https://images.unsplash.com/photo-1605902711622-cfb43c443c73?auto=format&fit=crop&w=1470&q=80" 
-             alt="" class="w-full h-full object-cover opacity-50">
+  <div class="absolute inset-0">
+    <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black opacity-80"></div>
+    <img src="https://images.unsplash.com/photo-1621508684426-66b1a3ccecc9?auto=format&fit=crop&w=1470&q=80" alt="" class="w-full h-full object-cover opacity-50">
+  </div>
+
+  <nav class="relative z-20 container mx-auto px-6 py-6 flex items-center justify-between">
+    <div class="text-4xl font-bold gradient-text">CryptoConsul</div>
+    <div class="hidden md:flex space-x-10 text-lg">
+      <a href="#home" class="nav-link">Главная</a>
+      <a href="#services" class="nav-link">Услуги</a>
+      <a href="#about" class="nav-link">О нас</a>
+      <a href="#reviews" class="nav-link">Отзывы</a>
+      <a href="#contact" class="nav-link">Контакты</a>
     </div>
+  </nav>
 
-    <!-- Частицы -->
-    <canvas id="particles" class="absolute inset-0 z-10"></canvas>
+  <div class="relative z-20 flex flex-col items-center justify-center text-center h-full px-6">
+    <h1 class="text-6xl md:text-7xl font-extrabold mb-6 leading-tight">
+      Возврат <span class="gradient-text">криптовалюты</span><br> и защита ваших активов
+    </h1>
+    <p class="text-2xl text-gray-300 mb-8">
+      Помогаем вернуть украденные средства и предотвращаем повторные атаки.
+    </p>
 
-    <!-- Навигация -->
-    <nav class="relative z-20 container mx-auto px-6 py-6 flex items-center justify-between">
-        <div class="text-3xl font-bold gradient-text animate-slide-up">ConsulTeam </div>
-        <div class="hidden md:flex space-x-8">
-            <a href="#home" class="hover:text-orange-500 transition-colors animate-slide-up" style="animation-delay:0.2s">Главная</a>
-            <a href="#services" class="hover:text-orange-500 transition-colors animate-slide-up" style="animation-delay:0.3s">Услуги</a>
-            <a href="#about" class="hover:text-orange-500 transition-colors animate-slide-up" style="animation-delay:0.4s">О нас</a>
-            <a href="#reviews" class="hover:text-orange-500 transition-colors animate-slide-up" style="animation-delay:0.5s">Отзывы</a>
-            <a href="#contact" class="hover:text-orange-500 transition-colors animate-slide-up" style="animation-delay:0.6s">Контакты</a>
-        </div>
-        <button class="md:hidden text-orange-500 animate-pulse-slow">
-            <i class="fas fa-bars text-2xl"></i>
-        </button>
-    </nav>
-
-    <!-- Hero с формой -->
-    <div class="relative z-20 flex flex-col items-center justify-center text-center h-full px-6" id="home">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight animate-slide-up">
-            Верни свои средства <br>
-            <span class="gradient-text animate-pulse">быстро и законно</span>
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-200 mb-6 animate-slide-up" style="animation-delay:0.2s">
-            100% способ возврата денег за 16-72 часа
-        </p>
-        <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8 animate-slide-up" style="animation-delay:0.4s">
-            Помогаем вернуть средства от недобросовестных компаний: черных брокеров, букмекеров, мошенников
-        </p>
-
-        <form id="header-form" class="bg-black bg-opacity-70 p-8 rounded-3xl max-w-2xl w-full animate-scale" style="animation-delay:0.6s">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                <input type="text" placeholder="Ваше имя" 
-                       class="w-full p-4 rounded-xl bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500">
-                <input type="tel" placeholder="Телефон" 
-                       class="w-full p-4 rounded-xl bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500">
-                <input type="email" placeholder="E-mail" 
-                       class="w-full p-4 rounded-xl bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500">
-            </div>
-            <button type="submit" class="btn-orange w-full py-4 rounded-xl text-white font-semibold text-lg mt-2">
-                Получить консультацию
-            </button>
-        </form>
-    </div>
-
-    <div class="absolute top-16 left-10 animate-float">
-        <i class="fas fa-shield-alt text-orange-500 text-5xl opacity-20"></i>
-    </div>
-    <div class="absolute bottom-20 right-10 animate-float" style="animation-delay:-2s">
-        <i class="fas fa-balance-scale text-orange-500 text-5xl opacity-20"></i>
-    </div>
+    <form class="bg-black bg-opacity-70 p-10 rounded-3xl max-w-2xl w-full animate-scale">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <input type="text" placeholder="Ваше имя" class="input-field">
+        <input type="tel" placeholder="Телефон" class="input-field">
+        <input type="email" placeholder="E-mail" class="input-field">
+      </div>
+      <button type="submit" class="btn-primary w-full py-5 rounded-xl text-white font-semibold text-xl">
+        Получить консультацию
+      </button>
+    </form>
+  </div>
 </header>
 
-<!-- ========================= STATS ========================= -->
-<section class="section-padding gradient-bg">
-    <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div class="stats-counter">
-                <div class="text-4xl font-bold gradient-text mb-2">50+</div>
-                <div class="text-lg text-gray-300">Выполненных проектов</div>
-            </div>
-            <div class="stats-counter">
-                <div class="text-4xl font-bold gradient-text mb-2">700k₽</div>
-                <div class="text-lg text-gray-300">Уже вернули клиентам</div>
-            </div>
-            <div class="stats-counter">
-                <div class="text-4xl font-bold gradient-text mb-2">200</div>
-                <div class="text-lg text-gray-300">Довольных клиентов</div>
-            </div>
-        </div>
+<!-- SERVICES -->
+<section id="services" class="section-padding bg-gray-900 text-center">
+  <div class="container mx-auto px-6">
+    <h2 class="text-5xl font-bold mb-10 gradient-text">Наши услуги</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-lock text-3xl"></i></div>
+        <h3 class="text-2xl font-semibold mb-4">Возврат криптовалюты</h3>
+        <p class="text-gray-300 text-lg">Помогаем вернуть украденные средства с бирж, обменников и кошельков.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-shield-alt text-3xl"></i></div>
+        <h3 class="text-2xl font-semibold mb-4">Защита активов</h3>
+        <p class="text-gray-300 text-lg">Восстанавливаем доступ и усиливаем безопасность ваших криптосчетов.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-user-secret text-3xl"></i></div>
+        <h3 class="text-2xl font-semibold mb-4">Блокчейн-расследования</h3>
+        <p class="text-gray-300 text-lg">Выявляем мошенников и отслеживаем транзакции по цепочке.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-balance-scale text-3xl"></i></div>
+        <h3 class="text-2xl font-semibold mb-4">Юридическая поддержка</h3>
+        <p class="text-gray-300 text-lg">Работаем с регуляторами и правоохранительными органами.</p>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- ========================= SERVICES ========================= -->
-<section id="services" class="section-padding bg-gray-900">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">Полное сопровождение <span class="gradient-text">от А до Я</span></h2>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto">Наши клиенты получают конкретную и исчерпывающую информацию по каждому отдельному случаю</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="card-hover bg-black p-6 rounded-2xl border border-orange-500 border-opacity-20">
-                <div class="gradient-orange w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                    <i class="fas fa-user-shield text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-3">Индивидуальные решения</h3>
-                <p class="text-gray-300">Каждый случай уникален и требует индивидуальной стратегии и взвешенных решений</p>
-            </div>
-            <div class="card-hover bg-black p-6 rounded-2xl border border-orange-500 border-opacity-20">
-                <div class="gradient-orange w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                    <i class="fas fa-hand-holding-usd text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-3">Доступность</h3>
-                <p class="text-gray-300">Нет скрытых платежей. Простой договор и оплата только после возврата денег</p>
-            </div>
-            <div class="card-hover bg-black p-6 rounded-2xl border border-orange-500 border-opacity-20">
-                <div class="gradient-orange w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                    <i class="fas fa-target text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-3">Работа на результат</h3>
-                <p class="text-gray-300">Помогаем вернуть деньги в 99% случаев. Узнайте свои шансы еще на стадии интервью</p>
-            </div>
-            <div class="card-hover bg-black p-6 rounded-2xl border border-orange-500 border-opacity-20">
-                <div class="gradient-orange w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                    <i class="fas fa-clock text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-3">Быстрый возврат</h3>
-                <p class="text-gray-300">Время возврата средств составляет от 16 до 72 часов в зависимости от случая</p>
-            </div>
-        </div>
+<!-- ABOUT -->
+<section id="about" class="section-padding gradient-bg text-center">
+  <div class="container mx-auto px-6">
+    <h2 class="text-5xl font-bold mb-6 gradient-text">О компании CryptoConsul</h2>
+    <p class="text-gray-300 max-w-3xl mx-auto text-xl mb-12">
+      Мы объединяем юристов, блокчейн-аналитиков и специалистов по кибербезопасности для защиты клиентов от криптомошенничества.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+      <div class="service-card">
+        <img src="photo/Imagelend2.png" class="w-40 h-40 rounded-full mx-auto mb-5 object-cover">
+        <h4 class="text-2xl font-semibold mb-2">Дмитрий Волков</h4>
+        <p class="text-cyan-400 mb-3 text-lg">Ведущий юрист по криптоспорам</p>
+        <p class="text-gray-300 text-base mb-5">Более 10 лет в сфере международного права и возврата криптоактивов.</p>
+        <button class="btn-secondary open-popup">Записаться на консультацию</button>
+      </div>
+
+      <div class="service-card">
+        <img src="photo/Imagelend1.png" class="w-40 h-40 rounded-full mx-auto mb-5 object-cover">
+        <h4 class="text-2xl font-semibold mb-2">Андрей Никитин</h4>
+        <p class="text-cyan-400 mb-3 text-lg">Эксперт по блокчейн-расследованиям</p>
+        <p class="text-gray-300 text-base mb-5">Специалист по отслеживанию транзакций и защите от фишинговых атак.</p>
+        <button class="btn-secondary open-popup">Записаться на консультацию</button>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- ========================= PROBLEMS ========================= -->
-<section class="section-padding gradient-bg">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                <span class="gradient-text">Чем мы будем полезны?</span>
-            </h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div class="flex items-center space-x-4 p-6 bg-black bg-opacity-50 rounded-xl border border-orange-500 border-opacity-20">
-                <i class="fas fa-chart-line text-orange-500 text-2xl"></i>
-                <span class="text-lg">Брокер не выводит деньги и не выходит на связь</span>
-            </div>
-            <div class="flex items-center space-x-4 p-6 bg-black bg-opacity-50 rounded-xl border border-orange-500 border-opacity-20">
-                <i class="fas fa-dice text-orange-500 text-2xl"></i>
-                <span class="text-lg">Букмекерская контора не хочет платить выигрыш</span>
-            </div>
-            <div class="flex items-center space-x-4 p-6 bg-black bg-opacity-50 rounded-xl border border-orange-500 border-opacity-20">
-                <i class="fas fa-coins text-orange-500 text-2xl"></i>
-                <span class="text-lg">Мошенники завладели вашей криптовалютой</span>
-            </div>
-            <div class="flex items-center space-x-4 p-6 bg-black bg-opacity-50 rounded-xl border border-orange-500 border-opacity-20">
-                <i class="fas fa-pyramid text-orange-500 text-2xl"></i>
-                <span class="text-lg">Не знаете, как вернуть деньги после инвестиционной аферы</span>
-            </div>
-        </div>
+<!-- REVIEWS -->
+<section id="reviews" class="section-padding bg-gray-900 text-center">
+  <div class="container mx-auto px-6">
+    <h2 class="text-5xl font-bold mb-10 gradient-text">Отзывы клиентов</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="review-card"><p class="text-gray-300 text-lg mb-4">“Помогли вернуть USDT, украденные при фишинг-атаке.”</p><span class="text-cyan-400 font-semibold text-lg">Артем К.</span></div>
+      <div class="review-card"><p class="text-gray-300 text-lg mb-4">“Нашли мошенников по цепочке блокчейна. Впечатлён.”</p><span class="text-cyan-400 font-semibold text-lg">Елена С.</span></div>
+      <div class="review-card"><p class="text-gray-300 text-lg mb-4">“Возврат крипты занял всего три дня. Потрясающе.”</p><span class="text-cyan-400 font-semibold text-lg">Владимир Р.</span></div>
     </div>
+  </div>
 </section>
 
-<!-- ========================= HOW WE WORK ========================= -->
-<section id="how-we-work" class="section-padding bg-gray-900">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Как мы работаем</h2>
-            <p class="text-gray-300 text-xl max-w-3xl mx-auto">Процесс возврата средств построен на проверенной методике и прозрачных шагах</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-8 max-w-5xl mx-auto">
-            <div class="timeline-item step-1">
-                <p class="text-gray-300">Свяжитесь с нами для бесплатной консультации</p>
-            </div>
-            <div class="timeline-item step-2">
-                <p class="text-gray-300">Мы оцениваем ваш случай и определяем шанс возврата</p>
-            </div>
-            <div class="timeline-item step-3">
-                <p class="text-gray-300">Подписываем договор и начинаем процесс возврата</p>
-            </div>
-            <div class="timeline-item step-4">
-                <p class="text-gray-300">Ведем переговоры и юридические действия для возврата средств</p>
-            </div>
-            <div class="timeline-item step-5">
-                <p class="text-gray-300">Вы получаете деньги на свой счет в течение 16-72 часов</p>
-            </div>
-        </div>
-    </div>
+<!-- CONTACT -->
+<section id="contact" class="section-padding gradient-bg text-center">
+  <div class="container mx-auto px-6">
+    <h2 class="text-5xl font-bold mb-6 gradient-text">Свяжитесь с нами</h2>
+    <p class="text-gray-300 mb-8 text-xl">Оставьте заявку, и эксперт свяжется с вами в течение часа.</p>
+    <form class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+      <input type="text" placeholder="Имя" class="input-field text-lg">
+      <input type="email" placeholder="E-mail" class="input-field text-lg">
+      <input type="tel" placeholder="Телефон" class="input-field md:col-span-2 text-lg">
+      <textarea placeholder="Опишите проблему" class="input-field md:col-span-2 text-lg"></textarea>
+      <button class="btn-primary py-5 rounded-xl text-white font-semibold text-xl md:col-span-2">Отправить</button>
+    </form>
+  </div>
 </section>
 
-<!-- ========================= ABOUT ========================= -->
-<section id="about" class="section-padding gradient-bg">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">О нас</h2>
-        <p class="text-gray-300 max-w-3xl mx-auto text-lg mb-12">
-            Мы команда профессионалов с многолетним опытом работы в сфере возврата средств от мошенников. Наша миссия – помочь людям вернуть свои деньги безопасно, быстро и законно.
-        </p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            <!-- Юрист 1 -->
-            <div class="card-hover bg-black bg-opacity-50 p-8 rounded-2xl text-center border border-orange-500 border-opacity-20">
-                <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=faces&fit=crop&h=200&w=200" 
-                     alt="Юрист Александр Петров" 
-                     class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
-                <h4 class="text-xl font-semibold mb-1">Александр Петров</h4>
-                <p class="text-orange-500 mb-3">Ведущий юрист по финансовым спорам</p>
-                <p class="text-gray-300">5+ лет опыта в сфере возврата средств от недобросовестных брокеров</p>
-            </div>
-
-            <!-- Юрист 2 -->
-            <div class="card-hover bg-black bg-opacity-50 p-8 rounded-2xl text-center border border-orange-500 border-opacity-20">
-                <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=faces&fit=crop&h=200&w=200" 
-                     alt="Юрист Мария Иванова" 
-                     class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
-                <h4 class="text-xl font-semibold mb-1">Мария Иванова</h4>
-                <p class="text-orange-500 mb-3">Специалист по международному праву</p>
-                <p class="text-gray-300">Эксперт по работе с зарубежными финансовыми организациями</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<style>
-  /* Анимация появления с плавным эффектом */
-  @keyframes slideUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-
-  .animate-slide-up {
-    opacity: 0;
-    animation: slideUp 0.8s ease-out forwards;
-  }
-
-  /* Задержка анимации для последовательного появления */
-  .animate-slide-up:nth-child(1) { animation-delay: 0s; }
-  .animate-slide-up:nth-child(2) { animation-delay: 0.2s; }
-  .animate-slide-up:nth-child(3) { animation-delay: 0.4s; }
-  .animate-slide-up:nth-child(4) { animation-delay: 0.6s; }
-</style>
-
-
-
-
-
-<!-- ========================= REVIEWS ========================= -->
-<section id="reviews" class="section-padding bg-gray-900">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Отзывы наших клиентов</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-black bg-opacity-50 p-6 rounded-xl border border-orange-500 border-opacity-20">
-                <p class="text-gray-300 mb-4">"Быстро вернули деньги после мошенничества с брокером. Очень доволен!"</p>
-                <span class="text-orange-500 font-semibold">Иван П.</span>
-            </div>
-            <div class="bg-black bg-opacity-50 p-6 rounded-xl border border-orange-500 border-opacity-20">
-                <p class="text-gray-300 mb-4">"Отличная поддержка и консультации. Все четко и профессионально."</p>
-                <span class="text-orange-500 font-semibold">Мария К.</span>
-            </div>
-            <div class="bg-black bg-opacity-50 p-6 rounded-xl border border-orange-500 border-opacity-20">
-                <p class="text-gray-300 mb-4">"Рекомендую всем! Деньги вернули очень быстро."</p>
-                <span class="text-orange-500 font-semibold">Алексей С.</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ========================= CONTACT ========================= -->
-<section id="contact" class="section-padding gradient-bg">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Свяжитесь с нами</h2>
-        <p class="text-gray-300 mb-8">Заполните форму и мы свяжемся с вами в ближайшее время</p>
-        <form class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input type="text" placeholder="Имя" class="p-4 rounded-xl bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500">
-            <input type="email" placeholder="E-mail" class="p-4 rounded-xl bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500">
-            <input type="tel" placeholder="Телефон" class="p-4 rounded-xl bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 md:col-span-2">
-            <textarea placeholder="Сообщение" class="p-4 rounded-xl bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 md:col-span-2"></textarea>
-            <button class="btn-orange py-4 rounded-xl text-white font-semibold text-lg md:col-span-2">Отправить</button>
-        </form>
-    </div>
-</section>
-
-<!-- ========================= FOOTER ========================= -->
-<footer class="bg-black py-12 text-gray-400 text-center">
-    <p>© 2025 ConsulTeam. Все права защищены.</p>
+<!-- FOOTER -->
+<footer class="bg-black py-12 text-gray-400 text-center text-lg">
+  <p>© 2025 CryptoConsul. Все права защищены.</p>
 </footer>
 
-<!-- ========================= PARTICLES JS ========================= -->
+<!-- POPUP -->
+<div id="popup" class="popup hidden fixed inset-0 flex items-center justify-center">
+  <div class="popup-bg absolute inset-0 bg-black bg-opacity-80 backdrop-blur-sm"></div>
+  <div class="popup-content relative bg-gray-900 bg-opacity-90 border border-cyan-500 rounded-3xl p-10 max-w-lg w-full text-center animate-scale">
+    <button class="absolute top-4 right-4 text-cyan-400 text-2xl close-popup"><i class="fas fa-times"></i></button>
+    <h3 class="text-3xl font-bold mb-6 gradient-text">Записаться на консультацию</h3>
+    <form class="space-y-4">
+      <input type="text" placeholder="Имя" class="input-field text-lg">
+      <input type="email" placeholder="E-mail" class="input-field text-lg">
+      <input type="tel" placeholder="Телефон" class="input-field text-lg">
+      <textarea placeholder="Кратко опишите проблему" class="input-field text-lg"></textarea>
+      <button type="submit" class="btn-primary w-full py-4 text-lg font-semibold">Отправить</button>
+    </form>
+  </div>
+</div>
+
 <script>
-const canvas = document.getElementById('particles');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+  const openBtns = document.querySelectorAll('.open-popup');
+  const popup = document.getElementById('popup');
+  const closeBtn = document.querySelector('.close-popup');
 
-let particlesArray = [];
-class Particle {
-    constructor(){
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 3 + 1;
-        this.speedX = Math.random() * 1 - 0.5;
-        this.speedY = Math.random() * 1 - 0.5;
-    }
-    update(){
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if(this.x > canvas.width) this.x = 0;
-        if(this.x < 0) this.x = canvas.width;
-        if(this.y > canvas.height) this.y = 0;
-        if(this.y < 0) this.y = canvas.height;
-    }
-    draw(){
-        ctx.fillStyle = 'rgba(255,107,53,0.5)';
-        ctx.beginPath();
-        ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
-        ctx.fill();
-    }
-}
+  openBtns.forEach(btn => btn.addEventListener('click', () => popup.classList.remove('hidden')));
+  closeBtn.addEventListener('click', () => popup.classList.add('hidden'));
+  popup.addEventListener('click', e => { if (e.target === popup) popup.classList.add('hidden'); });
+</script>
 
-function init(){
-    particlesArray = [];
-    for(let i=0;i<100;i++){
-        particlesArray.push(new Particle());
-    }
-}
-function animate(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particlesArray.forEach(p=>{p.update(); p.draw();});
-    requestAnimationFrame(animate);
-}
-init();
-animate();
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const popup = document.getElementById('popup');
+  const openBtns = document.querySelectorAll('.open-popup');
+  const closeBtn = document.querySelector('.close-popup');
+  let popupOpened = false;
 
-window.addEventListener('resize', ()=>{
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    init();
+  // Открыть popup
+  const openPopup = () => {
+    popup.classList.remove('hidden');
+    popupOpened = true;
+  };
+
+  // Закрыть popup
+  const closePopup = () => {
+    popup.classList.add('hidden');
+  };
+
+  // Клик по кнопке
+  openBtns.forEach(btn => btn.addEventListener('click', openPopup));
+
+  // Клик по крестику
+  closeBtn.addEventListener('click', closePopup);
+
+  // Клик вне окна
+  popup.addEventListener('click', e => {
+    if (e.target === popup) closePopup();
+  });
+
+  // Автопоявление через 5 секунд
+  setTimeout(() => {
+    if (!popupOpened) openPopup();
+  }, 5000);
 });
 </script>
+
 
 </body>
 </html>
