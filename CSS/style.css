@@ -331,6 +331,7 @@ body {
   max-width: 672px;
   width: 100%;
   animation: scaleIn 0.5s ease-out forwards;
+  margin: 0 auto;
 }
 
 .form-grid {
@@ -707,6 +708,7 @@ textarea.input-field {
 
   .burger {
     display: flex;
+    padding: 8px;
   }
 
   .logo {
@@ -722,7 +724,7 @@ textarea.input-field {
   }
 
   .header-form {
-    padding: 24px;
+    padding: 12px;
   }
 
   .form-grid {
@@ -790,6 +792,10 @@ textarea.input-field {
 
   .btn-primary {
     font-size: 1rem;
-    padding: 16px;
+    padding: 12px;
+  }
+  .icon-box {
+    width: 66px;
+  height: 66px;
   }
 }
