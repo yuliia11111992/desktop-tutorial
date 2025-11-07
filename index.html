@@ -4,104 +4,118 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CryptoConsul — Возврат криптовалюты и защита от мошенников</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="CSS/style.css">
 </head>
 
-<body class="bg-black text-white overflow-x-hidden">
+<body>
 
 <!-- HEADER -->
-<header class="relative overflow-hidden h-screen">
-  <div class="absolute inset-0">
-    <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black opacity-80"></div>
-    <img src="https://images.unsplash.com/photo-1621508684426-66b1a3ccecc9?auto=format&fit=crop&w=1470&q=80" alt="" class="w-full h-full object-cover opacity-50">
+<header class="header" id="home">
+  <div class="header-bg">
+    <div class="header-overlay"></div>
+    <img src="https://image.pollinations.ai/prompt/Professional%20legal%20and%20financial%20recovery%20theme%20background%20image.%20Dark%20elegant%20background%20with%20abstract%20digital%20elements:%20cryptocurrency%20symbols%20(Bitcoin,%20Ethereum%20icons),%20blockchain%20network%20connections%20with%20glowing%20nodes%20and%20lines,%20legal%20scales%20of%20justice,%20shield%20protection%20symbols,%20and%20lawyer%20briefcase%20silhouettes.%20Color%20scheme:%20deep%20blacks,%20dark%20blues,%20cyan%20glows,%20and%20blue%20accents.%20Modern,%20professional,%20tech-focused%20aesthetic%20with%20subtle%20gradients.%20High%20contrast,%20sophisticated%20corporate%20style.%20No%20text?width=1920&height=1080&nologo=true" alt="Background" class="header-img">
   </div>
 
-  <nav class="relative z-20 container mx-auto px-6 py-6 flex items-center justify-between">
-    <div class="text-4xl font-bold gradient-text">CryptoConsul</div>
-    <div class="hidden md:flex space-x-10 text-lg">
-      <a href="#home" class="nav-link">Главная</a>
-      <a href="#services" class="nav-link">Услуги</a>
-      <a href="#about" class="nav-link">О нас</a>
-      <a href="#reviews" class="nav-link">Отзывы</a>
-      <a href="#contact" class="nav-link">Контакты</a>
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-wrapper">
+        <div class="logo">CryptoConsul</div>
+        
+        <!-- Desktop Menu -->
+        <div class="nav-menu" id="navMenu">
+          <a href="#home" class="nav-link">Главная</a>
+          <a href="#services" class="nav-link">Услуги</a>
+          <a href="#about" class="nav-link">О нас</a>
+          <a href="#reviews" class="nav-link">Отзывы</a>
+          <a href="#contact" class="nav-link">Контакты</a>
+        </div>
+
+        <!-- Burger Menu -->
+        <button class="burger" id="burger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <div class="relative z-20 flex flex-col items-center justify-center text-center h-full px-6">
-    <h1 class="text-6xl md:text-7xl font-extrabold mb-6 leading-tight">
-      Возврат <span class="gradient-text">криптовалюты</span><br> и защита ваших активов
-    </h1>
-    <p class="text-2xl text-gray-300 mb-8">
-      Помогаем вернуть украденные средства и предотвращаем повторные атаки.
-    </p>
+  <div class="header-content">
+    <div class="container">
+      <h1 class="header-title">
+        Возврат <span class="gradient-text">криптовалюты</span><br> и защита ваших активов
+      </h1>
+      <p class="header-subtitle">
+        Помогаем вернуть украденные средства и предотвращаем повторные атаки.
+      </p>
 
-    <form class="bg-black bg-opacity-70 p-10 rounded-3xl max-w-2xl w-full animate-scale">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-        <input type="text" placeholder="Ваше имя" class="input-field">
-        <input type="tel" placeholder="Телефон" class="input-field">
-        <input type="email" placeholder="E-mail" class="input-field">
-      </div>
-      <button type="submit" class="btn-primary w-full py-5 rounded-xl text-white font-semibold text-xl">
-        Получить консультацию
-      </button>
-    </form>
+      <form class="header-form">
+        <div class="form-grid">
+          <input type="text" placeholder="Ваше имя" class="input-field" required>
+          <input type="tel" placeholder="Телефон" class="input-field" required>
+          <input type="email" placeholder="E-mail" class="input-field" required>
+        </div>
+        <button type="submit" class="btn-primary">
+          Получить консультацию
+        </button>
+      </form>
+    </div>
   </div>
 </header>
 
 <!-- SERVICES -->
-<section id="services" class="section-padding bg-gray-900 text-center">
-  <div class="container mx-auto px-6">
-    <h2 class="text-5xl font-bold mb-10 gradient-text">Наши услуги</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+<section id="services" class="section services-section">
+  <div class="container">
+    <h2 class="section-title">Наши услуги</h2>
+    <div class="services-grid">
       <div class="service-card">
-        <div class="icon-box"><i class="fas fa-lock text-3xl"></i></div>
-        <h3 class="text-2xl font-semibold mb-4">Возврат криптовалюты</h3>
-        <p class="text-gray-300 text-lg">Помогаем вернуть украденные средства с бирж, обменников и кошельков.</p>
+        <div class="icon-box"><i class="fas fa-lock"></i></div>
+        <h3 class="card-title">Возврат криптовалюты</h3>
+        <p class="card-text">Помогаем вернуть украденные средства с бирж, обменников и кошельков.</p>
       </div>
       <div class="service-card">
-        <div class="icon-box"><i class="fas fa-shield-alt text-3xl"></i></div>
-        <h3 class="text-2xl font-semibold mb-4">Защита активов</h3>
-        <p class="text-gray-300 text-lg">Восстанавливаем доступ и усиливаем безопасность ваших криптосчетов.</p>
+        <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+        <h3 class="card-title">Защита активов</h3>
+        <p class="card-text">Восстанавливаем доступ и усиливаем безопасность ваших криптосчетов.</p>
       </div>
       <div class="service-card">
-        <div class="icon-box"><i class="fas fa-user-secret text-3xl"></i></div>
-        <h3 class="text-2xl font-semibold mb-4">Блокчейн-расследования</h3>
-        <p class="text-gray-300 text-lg">Выявляем мошенников и отслеживаем транзакции по цепочке.</p>
+        <div class="icon-box"><i class="fas fa-user-secret"></i></div>
+        <h3 class="card-title">Блокчейн-расследования</h3>
+        <p class="card-text">Выявляем мошенников и отслеживаем транзакции по цепочке.</p>
       </div>
       <div class="service-card">
-        <div class="icon-box"><i class="fas fa-balance-scale text-3xl"></i></div>
-        <h3 class="text-2xl font-semibold mb-4">Юридическая поддержка</h3>
-        <p class="text-gray-300 text-lg">Работаем с регуляторами и правоохранительными органами.</p>
+        <div class="icon-box"><i class="fas fa-balance-scale"></i></div>
+        <h3 class="card-title">Юридическая поддержка</h3>
+        <p class="card-text">Работаем с регуляторами и правоохранительными органами.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section-padding gradient-bg text-center">
-  <div class="container mx-auto px-6">
-    <h2 class="text-5xl font-bold mb-6 gradient-text">О компании CryptoConsul</h2>
-    <p class="text-gray-300 max-w-3xl mx-auto text-xl mb-12">
+<section id="about" class="section about-section">
+  <div class="container">
+    <h2 class="section-title">О компании CryptoConsul</h2>
+    <p class="section-description">
       Мы объединяем юристов, блокчейн-аналитиков и специалистов по кибербезопасности для защиты клиентов от криптомошенничества.
     </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-      <div class="service-card">
-        <img src="photo/Imagelend2.png" class="w-40 h-40 rounded-full mx-auto mb-5 object-cover">
-        <h4 class="text-2xl font-semibold mb-2">Дмитрий Волков</h4>
-        <p class="text-cyan-400 mb-3 text-lg">Ведущий юрист по криптоспорам</p>
-        <p class="text-gray-300 text-base mb-5">Более 10 лет в сфере международного права и возврата криптоактивов.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="photo/Imagelend2.png" alt="Дмитрий Волков" class="team-photo">
+        <h4 class="team-name">Дмитрий Волков</h4>
+        <p class="team-position">Ведущий юрист по криптоспорам</p>
+        <p class="team-description">Более 10 лет в сфере международного права и возврата криптоактивов.</p>
         <button class="btn-secondary open-popup">Записаться на консультацию</button>
       </div>
 
-      <div class="service-card">
-        <img src="photo/Imagelend1.png" class="w-40 h-40 rounded-full mx-auto mb-5 object-cover">
-        <h4 class="text-2xl font-semibold mb-2">Андрей Никитин</h4>
-        <p class="text-cyan-400 mb-3 text-lg">Эксперт по блокчейн-расследованиям</p>
-        <p class="text-gray-300 text-base mb-5">Специалист по отслеживанию транзакций и защите от фишинговых атак.</p>
+      <div class="team-card">
+        <img src="photo/Imagelend1.png" alt="Андрей Никитин" class="team-photo">
+        <h4 class="team-name">Андрей Никитин</h4>
+        <p class="team-position">Эксперт по блокчейн-расследованиям</p>
+        <p class="team-description">Специалист по отслеживанию транзакций и защите от фишинговых атак.</p>
         <button class="btn-secondary open-popup">Записаться на консультацию</button>
       </div>
     </div>
@@ -109,99 +123,70 @@
 </section>
 
 <!-- REVIEWS -->
-<section id="reviews" class="section-padding bg-gray-900 text-center">
-  <div class="container mx-auto px-6">
-    <h2 class="text-5xl font-bold mb-10 gradient-text">Отзывы клиентов</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-      <div class="review-card"><p class="text-gray-300 text-lg mb-4">“Помогли вернуть USDT, украденные при фишинг-атаке.”</p><span class="text-cyan-400 font-semibold text-lg">Артем К.</span></div>
-      <div class="review-card"><p class="text-gray-300 text-lg mb-4">“Нашли мошенников по цепочке блокчейна. Впечатлён.”</p><span class="text-cyan-400 font-semibold text-lg">Елена С.</span></div>
-      <div class="review-card"><p class="text-gray-300 text-lg mb-4">“Возврат крипты занял всего три дня. Потрясающе.”</p><span class="text-cyan-400 font-semibold text-lg">Владимир Р.</span></div>
+<section id="reviews" class="section reviews-section">
+  <div class="container">
+    <h2 class="section-title">Отзывы клиентов</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <p class="review-text">"Помогли вернуть USDT, украденные при фишинг-атаке."</p>
+        <span class="review-author">Артем К.</span>
+      </div>
+      <div class="review-card">
+        <p class="review-text">"Нашли мошенников по цепочке блокчейна. Впечатлён."</p>
+        <span class="review-author">Елена С.</span>
+      </div>
+      <div class="review-card">
+        <p class="review-text">"Возврат крипты занял всего три дня. Потрясающе."</p>
+        <span class="review-author">Владимир Р.</span>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section-padding gradient-bg text-center">
-  <div class="container mx-auto px-6">
-    <h2 class="text-5xl font-bold mb-6 gradient-text">Свяжитесь с нами</h2>
-    <p class="text-gray-300 mb-8 text-xl">Оставьте заявку, и эксперт свяжется с вами в течение часа.</p>
-    <form class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-      <input type="text" placeholder="Имя" class="input-field text-lg">
-      <input type="email" placeholder="E-mail" class="input-field text-lg">
-      <input type="tel" placeholder="Телефон" class="input-field md:col-span-2 text-lg">
-      <textarea placeholder="Опишите проблему" class="input-field md:col-span-2 text-lg"></textarea>
-      <button class="btn-primary py-5 rounded-xl text-white font-semibold text-xl md:col-span-2">Отправить</button>
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <h2 class="section-title">Свяжитесь с нами</h2>
+    <p class="section-description">Оставьте заявку, и эксперт свяжется с вами в течение часа.</p>
+    <form class="contact-form">
+      <div class="contact-grid">
+        <input type="text" placeholder="Имя" class="input-field" required>
+        <input type="email" placeholder="E-mail" class="input-field" required>
+        <input type="tel" placeholder="Телефон" class="input-field contact-full" required>
+        <textarea placeholder="Опишите проблему" class="input-field contact-full" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn-primary contact-btn">Отправить</button>
     </form>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-black py-12 text-gray-400 text-center text-lg">
-  <p>© 2025 CryptoConsul. Все права защищены.</p>
+<footer class="footer">
+  <div class="container">
+    <p class="footer-text">© 2025 CryptoConsul. Все права защищены.</p>
+  </div>
 </footer>
 
 <!-- POPUP -->
-<div id="popup" class="popup hidden fixed inset-0 flex items-center justify-center">
-  <div class="popup-bg absolute inset-0 bg-black bg-opacity-80 backdrop-blur-sm"></div>
-  <div class="popup-content relative bg-gray-900 bg-opacity-90 border border-cyan-500 rounded-3xl p-10 max-w-lg w-full text-center animate-scale">
-    <button class="absolute top-4 right-4 text-cyan-400 text-2xl close-popup"><i class="fas fa-times"></i></button>
-    <h3 class="text-3xl font-bold mb-6 gradient-text">Записаться на консультацию</h3>
-    <form class="space-y-4">
-      <input type="text" placeholder="Имя" class="input-field text-lg">
-      <input type="email" placeholder="E-mail" class="input-field text-lg">
-      <input type="tel" placeholder="Телефон" class="input-field text-lg">
-      <textarea placeholder="Кратко опишите проблему" class="input-field text-lg"></textarea>
-      <button type="submit" class="btn-primary w-full py-4 text-lg font-semibold">Отправить</button>
+<div id="popup" class="popup hidden">
+  <div class="popup-bg"></div>
+  <div class="popup-content">
+    <button class="popup-close close-popup" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+    <h3 class="popup-title">Записаться на консультацию</h3>
+    <form class="popup-form">
+      <input type="text" placeholder="Имя" class="input-field" required>
+      <input type="email" placeholder="E-mail" class="input-field" required>
+      <input type="tel" placeholder="Телефон" class="input-field" required>
+      <textarea placeholder="Кратко опишите проблему" class="input-field" rows="4" required></textarea>
+      <button type="submit" class="btn-primary">Отправить</button>
     </form>
   </div>
 </div>
+<div class="menu-overlay" id="menuOverlay"></div>
 
-<script>
-  const openBtns = document.querySelectorAll('.open-popup');
-  const popup = document.getElementById('popup');
-  const closeBtn = document.querySelector('.close-popup');
-
-  openBtns.forEach(btn => btn.addEventListener('click', () => popup.classList.remove('hidden')));
-  closeBtn.addEventListener('click', () => popup.classList.add('hidden'));
-  popup.addEventListener('click', e => { if (e.target === popup) popup.classList.add('hidden'); });
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const popup = document.getElementById('popup');
-  const openBtns = document.querySelectorAll('.open-popup');
-  const closeBtn = document.querySelector('.close-popup');
-  let popupOpened = false;
-
-  // Открыть popup
-  const openPopup = () => {
-    popup.classList.remove('hidden');
-    popupOpened = true;
-  };
-
-  // Закрыть popup
-  const closePopup = () => {
-    popup.classList.add('hidden');
-  };
-
-  // Клик по кнопке
-  openBtns.forEach(btn => btn.addEventListener('click', openPopup));
-
-  // Клик по крестику
-  closeBtn.addEventListener('click', closePopup);
-
-  // Клик вне окна
-  popup.addEventListener('click', e => {
-    if (e.target === popup) closePopup();
-  });
-
-  // Автопоявление через 5 секунд
-  setTimeout(() => {
-    if (!popupOpened) openPopup();
-  }, 5000);
-});
-</script>
-
+<script src="Js/script.js"></script>
 
 </body>
 </html>
