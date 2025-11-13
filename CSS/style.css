@@ -1,4 +1,6 @@
-/* ===== RESET & BASE ===== */
+/* ========================================
+   1. RESET & BASE
+======================================== */
 * {
   margin: 0;
   padding: 0;
@@ -19,11 +21,14 @@ body {
   padding: 0 24px;
 }
 
+
+/* ========================================
+   2. UTILITIES
+======================================== */
 .hidden {
   display: none !important;
 }
 
-/* ===== GRADIENTS ===== */
 .gradient-text {
   background: linear-gradient(135deg, #06b6d4, #3b82f6);
   -webkit-background-clip: text;
@@ -35,7 +40,11 @@ body {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
 }
 
-/* ===== HEADER ===== */
+
+/* ========================================
+   3. HEADER & NAVIGATION
+======================================== */
+/* Header */
 .header {
   position: relative;
   height: 100vh;
@@ -61,244 +70,6 @@ body {
   opacity: 0.5;
 }
 
-/* ===== NAVIGATION ===== */
-.nav {
-  position: relative;
-  z-index: 1000; /* Увеличен z-index для навигации */
-  padding: 24px 0;
-}
-
-.nav-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-size: 2rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #06b6d4, #3b82f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: relative;
-  z-index: 1002; /* Логотип поверх всего */
-}
-
-.nav-menu {
-  display: flex;
-  gap: 40px;
-}
-
-.nav-link {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.125rem;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #06b6d4;
-}
-
-/* ===== BURGER MENU ===== */
-.burger {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  background: linear-gradient(135deg, #06b6d4, #3b82f6); /* Яркий градиентный фон */
-  border: none;
-  cursor: pointer;
-  padding: 12px;
-  border-radius: 8px;
-  z-index: 1002; /* Поверх всего */
-  position: relative;
-  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4); /* Свечение */
-  transition: all 0.3s ease;
-}
-
-.burger:hover {
-  box-shadow: 0 6px 25px rgba(6, 182, 212, 0.6);
-  transform: scale(1.05);
-}
-
-.burger span {
-  width: 28px;
-  height: 3px;
-  background: #fff;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
-
-.burger.active {
-  background: linear-gradient(135deg, #3b82f6, #06b6d4);
-}
-
-.burger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(8px, 8px);
-}
-
-.burger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.burger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(8px, -8px);
-}
-
-/* ===== MENU OVERLAY (затемнение фона) ===== */
-.menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85); /* Темный фон */
-  backdrop-filter: blur(10px); /* Размытие */
-  -webkit-backdrop-filter: blur(10px);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
-  z-index: 998; /* Под меню, но над контентом */
-}
-
-.menu-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* ===== MEDIA QUERIES ===== */
-@media (max-width: 768px) {
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 75%;
-    max-width: 320px;
-    height: 100vh;
-    background: linear-gradient(135deg, rgba(17, 24, 39, 0.98), rgba(15, 23, 42, 0.98));
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    flex-direction: column;
-    padding: 100px 40px 40px;
-    gap: 30px;
-    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border-left: 2px solid rgba(6, 182, 212, 0.5);
-    box-shadow: -10px 0 50px rgba(6, 182, 212, 0.2);
-    z-index: 999; /* Меню поверх overlay */
-  }
-
-  .nav-menu.active {
-    right: 0;
-  }
-
-  .nav-link {
-    font-size: 1.25rem;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(6, 182, 212, 0.1);
-    transition: all 0.3s ease;
-  }
-
-  .nav-link:hover {
-    padding-left: 10px;
-    border-left: 3px solid #06b6d4;
-  }
-
-  .burger {
-    display: flex;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-  }
-
-  /* Остальные мобильные стили остаются без изменений */
-  .header-title {
-    font-size: 2.5rem;
-  }
-
-  .header-subtitle {
-    font-size: 1.125rem;
-  }
-
-  .header-form {
-    padding: 24px;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section {
-    padding: 60px 0;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .section-description {
-    font-size: 1rem;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .reviews-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .popup-content {
-    padding: 32px 24px;
-  }
-
-  .popup-title {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 16px;
-  }
-
-  .nav-menu {
-    width: 85%;
-  }
-
-  .header-title {
-    font-size: 2rem;
-  }
-
-  .header-subtitle {
-    font-size: 1rem;
-  }
-
-  .logo {
-    font-size: 1.25rem;
-  }
-
-  .section-title {
-    font-size: 1.75rem;
-  }
-
-  .btn-primary {
-    font-size: 1rem;
-    padding: 16px;
-  }
-}
-
-/* ===== HEADER CONTENT ===== */
 .header-content {
   position: relative;
   z-index: 20;
@@ -341,26 +112,119 @@ body {
   margin-bottom: 16px;
 }
 
-/* ===== SECTIONS ===== */
+/* Navigation */
+.nav {
+  position: relative;
+  z-index: 1000;
+  padding: 24px 0;
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 1002;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #06b6d4;
+}
+
+/* Burger Menu */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 8px;
+  z-index: 1002;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4);
+  transition: all 0.3s ease;
+}
+
+.burger:hover {
+  box-shadow: 0 6px 25px rgba(6, 182, 212, 0.6);
+  transform: scale(1.05);
+}
+
+.burger span {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.burger.active {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+}
+
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Menu Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 998;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* ========================================
+   4. SECTIONS & COMMON ELEMENTS
+======================================== */
 .section {
   padding: 100px 0;
   text-align: center;
-}
-
-.services-section {
-  background: #111827;
-}
-
-.about-section {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-}
-
-.reviews-section {
-  background: #111827;
-}
-
-.contact-section {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
 }
 
 .section-title {
@@ -380,7 +244,94 @@ body {
   font-size: 1.25rem;
 }
 
-/* ===== BUTTONS ===== */
+/* Section Backgrounds */
+.services-section {
+  background: #111827;
+}
+
+.how-we-help-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.how-we-help-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.how-we-help-section::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.refund-process-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.refund-process-section::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.refund-process-section::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.why-trust-section {
+  background: #111827;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-section {
+  background: #111827;
+}
+
+.about-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+}
+
+.contact-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+}
+
+
+/* ========================================
+   5. BUTTONS & FORMS
+======================================== */
+/* Buttons */
 .btn-primary {
   width: 100%;
   padding: 20px;
@@ -417,7 +368,7 @@ body {
   box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
 }
 
-/* ===== INPUT FIELDS ===== */
+/* Input Fields */
 .input-field {
   width: 100%;
   padding: 20px;
@@ -444,7 +395,10 @@ textarea.input-field {
   min-height: 100px;
 }
 
-/* ===== SERVICES ===== */
+
+/* ========================================
+   6. SERVICES SECTION
+======================================== */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -491,7 +445,507 @@ textarea.input-field {
   font-size: 1.125rem;
 }
 
-/* ===== TEAM ===== */
+
+/* ========================================
+   7. HOW WE HELP SECTION
+======================================== */
+.how-we-help-intro {
+  max-width: 900px;
+  margin: 0 auto 64px;
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+.process-timeline {
+  max-width: 1000px;
+  margin: 0 auto 64px;
+  position: relative;
+}
+
+.process-item {
+  display: grid;
+  grid-template-columns: 80px 100px 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 48px;
+  position: relative;
+  padding: 32px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 24px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: all 0.4s ease;
+}
+
+.process-item:hover {
+  transform: translateX(10px);
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 10px 40px rgba(6, 182, 212, 0.2);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.process-item:last-child {
+  margin-bottom: 0;
+}
+
+.process-number {
+  font-size: 1rem;
+  font-weight: 600;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  padding-top: 8px;
+}
+
+.process-icon {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+  transition: all 0.3s ease;
+}
+
+.process-item:hover .process-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 15px 40px rgba(6, 182, 212, 0.5);
+}
+
+.process-icon i {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.process-content {
+  padding-top: 8px;
+}
+
+.process-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.process-text {
+  font-size: 1.125rem;
+  color: #d1d5db;
+  line-height: 1.8;
+}
+
+/* CTA Box */
+.cta-box {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.1));
+  border: 2px solid rgba(6, 182, 212, 0.3);
+  border-radius: 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(6, 182, 212, 0.1), transparent);
+  animation: shine 3s infinite;
+}
+
+.cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-text {
+  font-size: 1.25rem;
+  color: #d1d5db;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-btn {
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ========================================
+   8. REFUND PROCESS SECTION
+======================================== */
+.refund-intro {
+  max-width: 900px;
+  margin: 0 auto 64px;
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+.refund-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-bottom: 64px;
+  position: relative;
+  z-index: 1;
+}
+
+.refund-step {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(15, 23, 42, 0.5));
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 24px;
+  padding: 40px 32px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.refund-step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.refund-step:hover::before {
+  left: 100%;
+}
+
+.refund-step:hover {
+  transform: translateY(-10px);
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 20px 50px rgba(6, 182, 212, 0.3);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(15, 23, 42, 0.7));
+}
+
+.refund-step-number {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(59, 130, 246, 0.2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  z-index: 1;
+}
+
+.refund-step-content {
+  position: relative;
+  z-index: 2;
+}
+
+.refund-icon-wrapper {
+  margin-bottom: 24px;
+}
+
+.refund-icon {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.refund-icon::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+  filter: blur(15px);
+}
+
+.refund-step:hover .refund-icon {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 15px 40px rgba(6, 182, 212, 0.6);
+}
+
+.refund-step:hover .refund-icon::before {
+  opacity: 0.7;
+}
+
+.refund-icon i {
+  font-size: 2.25rem;
+  color: #fff;
+}
+
+.refund-step-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.refund-step-text {
+  font-size: 1.0625rem;
+  color: #d1d5db;
+  line-height: 1.8;
+}
+
+/* Refund CTA Box */
+.refund-cta-box {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1));
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  border-radius: 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.refund-cta-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(6, 182, 212, 0.15), transparent);
+  animation: refundShine 3s infinite;
+}
+
+.refund-cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 1;
+}
+
+.refund-cta-text {
+  font-size: 1.25rem;
+  color: #d1d5db;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.refund-cta-btn {
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ========================================
+   9. WHY TRUST SECTION
+======================================== */
+.why-trust-intro {
+  max-width: 900px;
+  margin: 0 auto 64px;
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+.trust-card {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(15, 23, 42, 0.6));
+  padding: 40px 32px;
+  border-radius: 24px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.trust-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.trust-card:hover::before {
+  left: 100%;
+}
+
+.trust-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 20px 50px rgba(6, 182, 212, 0.25);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(15, 23, 42, 0.8));
+}
+
+.trust-icon-wrapper {
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.trust-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.trust-icon::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+  filter: blur(10px);
+}
+
+.trust-card:hover .trust-icon {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 15px 40px rgba(6, 182, 212, 0.6);
+}
+
+.trust-card:hover .trust-icon::before {
+  opacity: 0.6;
+}
+
+.trust-icon i {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.trust-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 1;
+}
+
+.trust-text {
+  font-size: 1.0625rem;
+  color: #d1d5db;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* Stats Banner */
+.stats-banner {
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.1));
+  padding: 48px 32px;
+  border-radius: 24px;
+  border: 2px solid rgba(6, 182, 212, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.2), transparent);
+  animation: statsShine 3s infinite;
+}
+
+.stat-item {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #d1d5db;
+  font-weight: 500;
+}
+
+.stat-divider {
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(180deg, transparent, rgba(6, 182, 212, 0.5), transparent);
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ========================================
+   10. TEAM SECTION
+======================================== */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -539,39 +993,88 @@ textarea.input-field {
   margin-bottom: 20px;
 }
 
-/* ===== REVIEWS ===== */
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
+
+/* ========================================
+   11. FAQ SECTION
+======================================== */
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.review-card {
+.faq-item {
   background: #000;
-  padding: 48px 32px;
-  border-radius: 24px;
   border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 16px;
+  margin-bottom: 16px;
+  overflow: hidden;
   transition: all 0.3s ease;
 }
 
-.review-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+.faq-item:hover {
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 5px 20px rgba(6, 182, 212, 0.15);
 }
 
-.review-text {
-  color: #d1d5db;
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  background: transparent;
+  border: none;
+  color: #fff;
   font-size: 1.125rem;
-  margin-bottom: 16px;
-}
-
-.review-author {
-  color: #06b6d4;
   font-weight: 600;
-  font-size: 1.125rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* ===== CONTACT FORM ===== */
+.faq-question:hover {
+  color: #06b6d4;
+}
+
+.faq-question span {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.faq-icon {
+  font-size: 1rem;
+  color: #06b6d4;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 0 32px 24px 32px;
+}
+
+.faq-answer p {
+  color: #d1d5db;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+
+/* ========================================
+   12. CONTACT SECTION
+======================================== */
 .contact-form {
   max-width: 768px;
   margin: 0 auto;
@@ -591,7 +1094,10 @@ textarea.input-field {
   margin-top: 16px;
 }
 
-/* ===== FOOTER ===== */
+
+/* ========================================
+   13. FOOTER
+======================================== */
 .footer {
   background: #000;
   padding: 48px 0;
@@ -603,7 +1109,10 @@ textarea.input-field {
   font-size: 1.125rem;
 }
 
-/* ===== POPUP ===== */
+
+/* ========================================
+   14. POPUP
+======================================== */
 .popup {
   position: fixed;
   inset: 0;
@@ -672,7 +1181,10 @@ textarea.input-field {
   gap: 16px;
 }
 
-/* ===== ANIMATIONS ===== */
+
+/* ========================================
+   15. ANIMATIONS
+======================================== */
 @keyframes scaleIn {
   from {
     opacity: 0;
@@ -684,37 +1196,106 @@ textarea.input-field {
   }
 }
 
-/* ===== MEDIA QUERIES ===== */
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+@keyframes refundShine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+@keyframes statsShine {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+
+/* ========================================
+   16. MEDIA QUERIES (TABLET - 768px)
+======================================== */
+@media (max-width: 1024px) {
+  /* Stats Banner */
+  .stats-banner {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .stat-divider:nth-child(4) {
+    display: block;
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 2px;
+  }
+}
+
 @media (max-width: 768px) {
+  /* Container */
+  .container {
+    padding: 0 20px;
+  }
+
+  /* Navigation */
   .nav-menu {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 70%;
-    max-width: 300px;
+    width: 75%;
+    max-width: 320px;
     height: 100vh;
-    background: rgba(17, 24, 39, 0.98);
-    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgba(17, 24, 39, 0.98), rgba(15, 23, 42, 0.98));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
     padding: 100px 40px 40px;
     gap: 30px;
-    transition: right 0.3s ease;
-    border-left: 1px solid rgba(6, 182, 212, 0.3);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 2px solid rgba(6, 182, 212, 0.5);
+    box-shadow: -10px 0 50px rgba(6, 182, 212, 0.2);
+    z-index: 999;
   }
 
   .nav-menu.active {
     right: 0;
   }
 
+  .nav-link {
+    font-size: 1rem;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+  }
+
+  .nav-link:hover {
+    padding-left: 10px;
+    border-left: 3px solid #06b6d4;
+  }
+
   .burger {
     display: flex;
-    padding: 8px;
   }
 
   .logo {
     font-size: 1.5rem;
   }
 
+  /* Header */
   .header-title {
     font-size: 2.5rem;
   }
@@ -724,13 +1305,14 @@ textarea.input-field {
   }
 
   .header-form {
-    padding: 12px;
+    padding: 24px;
   }
 
   .form-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Sections */
   .section {
     padding: 60px 0;
   }
@@ -743,23 +1325,207 @@ textarea.input-field {
     font-size: 1rem;
   }
 
+  /* Services */
   .services-grid {
     grid-template-columns: 1fr;
     gap: 24px;
   }
 
+  /* How We Help */
+  .how-we-help-intro {
+    font-size: 1.125rem;
+    margin-bottom: 48px;
+  }
+
+  .how-we-help-section::before,
+  .how-we-help-section::after {
+    width: 400px;
+    height: 400px;
+  }
+
+  .process-item {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+
+  .process-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .process-number {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .process-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+  }
+
+  .process-icon i {
+    font-size: 2rem;
+  }
+
+  .process-content {
+    text-align: center;
+    padding-top: 0;
+  }
+
+  .process-title {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+
+  .process-text {
+    font-size: 1rem;
+  }
+
+  .cta-box {
+    padding: 32px 24px;
+  }
+
+  .cta-title {
+    font-size: 1.75rem;
+  }
+
+  .cta-text {
+    font-size: 1.125rem;
+    margin-bottom: 24px;
+  }
+
+  /* Refund Process */
+  .refund-intro {
+    font-size: 1.125rem;
+    margin-bottom: 48px;
+  }
+
+  .refund-process-section::before,
+  .refund-process-section::after {
+    width: 350px;
+    height: 350px;
+  }
+
+  .refund-steps {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .refund-step {
+    padding: 32px 24px;
+  }
+
+  .refund-step-number {
+    font-size: 3rem;
+    top: 16px;
+    right: 16px;
+  }
+
+  .refund-icon {
+    width: 75px;
+    height: 75px;
+  }
+
+  .refund-icon i {
+    font-size: 1.875rem;
+  }
+
+  .refund-step-title {
+    font-size: 1.375rem;
+  }
+
+  .refund-step-text {
+    font-size: 1rem;
+  }
+
+  .refund-cta-box {
+    padding: 32px 24px;
+  }
+
+  .refund-cta-title {
+    font-size: 1.75rem;
+  }
+
+  .refund-cta-text {
+    font-size: 1.125rem;
+    margin-bottom: 24px;
+  }
+
+  /* Why Trust */
+  .why-trust-intro {
+    font-size: 1.125rem;
+    margin-bottom: 48px;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .trust-card {
+    padding: 32px 24px;
+  }
+
+  .trust-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .trust-icon i {
+    font-size: 2rem;
+  }
+
+  .trust-title {
+    font-size: 1.375rem;
+  }
+
+  .trust-text {
+    font-size: 1rem;
+  }
+
+  .stats-banner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 24px;
+    padding: 40px 24px;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.9375rem;
+  }
+
+  /* Team */
   .team-grid {
     grid-template-columns: 1fr;
   }
 
-  .reviews-grid {
-    grid-template-columns: 1fr;
+  /* FAQ */
+  .faq-question {
+    padding: 20px 24px;
+    font-size: 1rem;
   }
 
+  .faq-answer {
+    font-size: 0.9375rem;
+  }
+
+  .faq-item.active .faq-answer {
+    padding: 0 24px 20px 24px;
+  }
+
+  /* Contact */
   .contact-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Popup */
   .popup-content {
     padding: 32px 24px;
   }
@@ -769,11 +1535,26 @@ textarea.input-field {
   }
 }
 
+
+/* ========================================
+   17. MEDIA QUERIES (MOBILE - 480px)
+======================================== */
 @media (max-width: 480px) {
+  /* Container */
   .container {
     padding: 0 16px;
   }
 
+  /* Navigation */
+  .nav-menu {
+    width: 85%;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  /* Header */
   .header-title {
     font-size: 2rem;
   }
@@ -782,20 +1563,197 @@ textarea.input-field {
     font-size: 1rem;
   }
 
-  .logo {
-    font-size: 1.25rem;
-  }
-
+  /* Sections */
   .section-title {
     font-size: 1.75rem;
   }
 
+  /* Buttons */
   .btn-primary {
     font-size: 1rem;
-    padding: 12px;
+    padding: 16px;
   }
+
+  /* Services */
   .icon-box {
     width: 66px;
-  height: 66px;
+    height: 66px;
+  }
+
+  /* How We Help */
+  .how-we-help-intro {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
+  .how-we-help-section::before,
+  .how-we-help-section::after {
+    width: 300px;
+    height: 300px;
+  }
+
+  .process-item {
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+
+  .process-number {
+    font-size: 2rem;
+  }
+
+  .process-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .process-icon i {
+    font-size: 1.75rem;
+  }
+
+  .process-title {
+    font-size: 1.25rem;
+  }
+
+  .process-text {
+    font-size: 0.9375rem;
+  }
+
+  .cta-box {
+    padding: 24px 20px;
+  }
+
+  .cta-title {
+    font-size: 1.5rem;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  /* Refund Process */
+  .refund-intro {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
+  .refund-process-section::before,
+  .refund-process-section::after {
+    width: 250px;
+    height: 250px;
+  }
+
+  .refund-steps {
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .refund-step {
+    padding: 28px 20px;
+  }
+
+  .refund-step-number {
+    font-size: 2.5rem;
+    top: 12px;
+    right: 12px;
+  }
+
+  .refund-icon {
+    width: 65px;
+    height: 65px;
+  }
+
+  .refund-icon i {
+    font-size: 1.625rem;
+  }
+
+  .refund-step-title {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+
+  .refund-step-text {
+    font-size: 0.9375rem;
+  }
+
+  .refund-cta-box {
+    padding: 24px 20px;
+  }
+
+  .refund-cta-title {
+    font-size: 1.5rem;
+  }
+
+  .refund-cta-text {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  /* Why Trust */
+  .why-trust-intro {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
+  .trust-card {
+    padding: 28px 20px;
+  }
+
+  .trust-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .trust-icon i {
+    font-size: 1.75rem;
+  }
+
+  .trust-title {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+
+  .trust-text {
+    font-size: 0.9375rem;
+  }
+
+  .stats-banner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px 20px;
+  }
+
+  .stat-number {
+    font-size: 2.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+  }
+
+  /* FAQ */
+  .faq-question {
+    padding: 16px 20px;
+    font-size: 0.9375rem;
+  }
+
+  .faq-question span {
+    padding-right: 12px;
+  }
+
+  .faq-icon {
+    font-size: 0.875rem;
+  }
+
+  .faq-answer {
+    font-size: 0.875rem;
+  }
+
+  .faq-item.active .faq-answer {
+    padding: 0 20px 16px 20px;
+  }
+
+  .faq-item {
+    margin-bottom: 12px;
   }
 }
