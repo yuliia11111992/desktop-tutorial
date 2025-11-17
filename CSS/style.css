@@ -717,56 +717,6 @@ textarea.input-field {
   line-height: 1.8;
 }
 
-/* Refund CTA Box */
-.refund-cta-box {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 48px;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1));
-  border: 2px solid rgba(59, 130, 246, 0.3);
-  border-radius: 24px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.refund-cta-box::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(6, 182, 212, 0.15), transparent);
-  animation: refundShine 3s infinite;
-}
-
-.refund-cta-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-  background: linear-gradient(135deg, #06b6d4, #3b82f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: relative;
-  z-index: 1;
-}
-
-.refund-cta-text {
-  font-size: 1.25rem;
-  color: #d1d5db;
-  margin-bottom: 32px;
-  position: relative;
-  z-index: 1;
-}
-
-.refund-cta-btn {
-  max-width: 400px;
-  position: relative;
-  z-index: 1;
-}
 
 
 /* ========================================
@@ -1445,9 +1395,7 @@ textarea.input-field {
     padding: 32px 24px;
   }
 
-  .refund-cta-title {
-    font-size: 1.75rem;
-  }
+
 
   .refund-cta-text {
     font-size: 1.125rem;
@@ -1680,14 +1628,7 @@ textarea.input-field {
     padding: 24px 20px;
   }
 
-  .refund-cta-title {
-    font-size: 1.5rem;
-  }
 
-  .refund-cta-text {
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
 
   /* Why Trust */
   .why-trust-intro {

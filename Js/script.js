@@ -102,7 +102,7 @@ setTimeout(() => {
   if (!popupOpened) {
     openPopup();
   }
-}, 5000);
+}, 20000);
 
 // ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
