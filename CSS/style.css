@@ -47,7 +47,6 @@ body {
 /* Header */
 .header {
   position: relative;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -78,7 +77,6 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: calc(100vh - 96px);
   padding: 24px;
 }
 
@@ -457,23 +455,31 @@ textarea.input-field {
 }
 
 .process-timeline {
-  max-width: 1000px;
-  margin: 0 auto 64px;
-  position: relative;
+    display: flex;
+    gap: 30px;
+    /* max-width: 1000px; */
+    margin: 0 auto 64px;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .process-item {
-  display: grid;
-  grid-template-columns: 80px 100px 1fr;
-  gap: 32px;
-  align-items: start;
-  margin-bottom: 48px;
-  position: relative;
-  padding: 32px;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 24px;
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  transition: all 0.4s ease;
+    display: flex;
+    grid-template-columns: 80px 100px 1fr;
+    gap: 32px;
+    align-items: center;
+    /* margin-bottom: 48px; */
+    position: relative;
+    padding: 32px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 24px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    transition: all 0.4s 
+ease;
+    max-width: 100%;
+    flex-direction: column;
+    width: 360px;
 }
 
 .process-item:hover {
@@ -615,6 +621,7 @@ textarea.input-field {
   padding: 40px 32px;
   transition: all 0.4s ease;
   overflow: hidden;
+  padding: 32px;
 }
 
 .refund-step::before {
@@ -702,13 +709,14 @@ textarea.input-field {
 }
 
 .refund-step-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-  background: linear-gradient(135deg, #06b6d4, #3b82f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+    text-align: left;
+    font-size: 1.65rem;
+    font-weight: 700;
+  margin: 0 78px 16px 0;
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .refund-step-text {
@@ -1541,8 +1549,8 @@ textarea.input-field {
   }
 
   .process-item {
-    padding: 20px;
-    margin-bottom: 24px;
+    padding: 34px 20px;
+ 
   }
 
   .process-number {
