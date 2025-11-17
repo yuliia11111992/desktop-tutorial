@@ -398,10 +398,15 @@ textarea.input-field {
    6. SERVICES SECTION
 ======================================== */
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+ display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+  grid-template-rows: repeat(2, 1fr);    /* 2 ряда */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
+
 
 .service-card {
   background: #000;
@@ -846,6 +851,7 @@ textarea.input-field {
   font-size: 1.0625rem;
   color: #d1d5db;
   line-height: 1.8;
+  text-align: left;
 }
 
 
@@ -861,21 +867,25 @@ textarea.input-field {
 }
 
 .trust-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  display: flex;
   gap: 32px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   margin-bottom: 80px;
 }
+
 
 .trust-card {
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(15, 23, 42, 0.6));
   padding: 40px 32px;
   border-radius: 24px;
   border: 1px solid rgba(59, 130, 246, 0.2);
-  text-align: center;
+  text-align: initial;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 360px;
 }
 
 .trust-card::before {
@@ -1520,6 +1530,7 @@ textarea.input-field {
 
   .refund-step-text {
     font-size: 1rem;
+    
   }
 
   .refund-cta-box {
@@ -1753,6 +1764,7 @@ textarea.input-field {
 
   .refund-step-text {
     font-size: 0.9375rem;
+
   }
 
   .refund-cta-box {
